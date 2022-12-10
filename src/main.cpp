@@ -29,6 +29,9 @@ BLEBas  blebas;  // battery
 void setup()
 {
   Serial.begin(115200);
+  delay(1000);
+  while ( !Serial ) yield();
+  delay(1000);
 
 #if CFG_DEBUG
   // Blocking wait for connection when debug mode is enabled via IDE
